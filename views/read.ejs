@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <h3>Database</h3>
+     <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Roll No</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      </table>
+      <%if(rows.length > 0){ rows.map((eachData)=>{ %>
+        <table>
+       <tbody>
+        <tr>
+          <td><%- eachData.Name%></td>
+          <td><%- eachData.Roll_No%></td>
+          <td><%- eachData.Email%></td>
+          <td>
+            <a
+            href="/delete-data?ID=
+          <%-eachData.ID%>"
+            class="card-link"
+            >Delete</a>
+          </td>
+        </tr>
+        </tbody>
+    </table>
+      <% })} else{ %>
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Empty Database</h5>
+        </div>
+      </div>
+      <%} %>
+    </div>
+  </body>
+</html>
+
